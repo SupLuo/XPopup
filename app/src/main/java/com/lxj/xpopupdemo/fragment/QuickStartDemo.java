@@ -143,6 +143,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                 new XPopup.Builder(getContext())
                         .isDestroyOnDismiss(true)
                         .hasStatusBar(false)
+                        .isRequestFocus(false)
                         .asCustom(new CustomCenter1(getContext()))
                         .show();
                 break;
@@ -269,6 +270,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
             case R.id.btnShowBottomList: //从底部弹出，带手势拖拽的列表弹窗
                 popupView = new XPopup.Builder(getContext())
                         .isDarkTheme(true)
+                        .hasShadowBg(false)
                         .customHostLifecycle(getLifecycle())
                         .moveUpToKeyboard(false)
                         .isDestroyOnDismiss(false)
@@ -303,6 +305,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.btnCustomBottomPopup: //自定义的底部弹窗
                 new XPopup.Builder(getContext())
+                        .hasShadowBg(false)
                         .moveUpToKeyboard(false) //如果不加这个，评论弹窗会移动到软键盘上面
 //                        .isViewMode(true)
                         .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
@@ -312,6 +315,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.btnPagerBottomPopup: //自定义的底部弹窗
                 new XPopup.Builder(getContext())
+                        .hasShadowBg(false)
                         .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
                         .isViewMode(true)
                         .asCustom(new PagerBottomPopup(getContext()))
@@ -324,6 +328,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                         .hasStatusBarShadow(false)
 //                        .isRequestFocus(false)
                         .isCoverSoftInput(true)
+                        .hasShadowBg(false)
 //                        .popupAnimation(PopupAnimation.ScrollAlphaFromTop)
 //                        .isClickThrough(true)
 //                        .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
@@ -363,7 +368,6 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                 new XPopup.Builder(getContext())
                         .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
                         .atView(v)
-                        .hasShadowBg(false) // 去掉半透明背景
                         .asCustom(customAttach2)
                         .show();
                 break;
@@ -389,6 +393,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.btnBubbleAttachPopup2: //垂直方向带气泡弹窗
                 new XPopup.Builder(getContext())
+                        .hasShadowBg(false)
                         .isTouchThrough(true)
                         .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
                         .atView(view.findViewById(R.id.vv))
@@ -451,7 +456,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                         .offsetY(300)
                         .offsetX(-100)
                         .hasShadowBg(false)
-//                        .hasBlurBg(true)
+                        .hasBlurBg(true)
                         .popupAnimation(PopupAnimation.TranslateFromLeft)
                         .asCustom(new QQMsgPopup(getContext()))
                         .show();
@@ -459,7 +464,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
             case R.id.btnShowPosition2:
                 new XPopup.Builder(getContext())
                         .hasShadowBg(false)
-//                        .hasBlurBg(true)
+                        .hasBlurBg(true)
                         .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
                         .isCenterHorizontal(true)
                         .offsetY(200)
