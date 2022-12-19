@@ -1,3 +1,24 @@
+## 此版本为fork版本，用于修复以下两个问题
+1、修复4.4系统运行时crash的问题
+解决办法：新增annotationProcessor
+
+2、修复bubble布局设置根据目标view居中显示时，如果气泡布局过长超过屏幕边界导致显示不全的问题
+解决办法：如果出现显示不全，则会调整气泡对齐目标view的左边界或者右边界显示
+
+## 使用：
+在工程的build.gradle中添加如下配置：
+```
+repositories {
+        maven {
+            allowInsecureProtocol true
+            url "http://nexus.ucuxin.com/repository/droid-app-release/"
+        }
+}
+
+```
+在使用的Module的build.gradle文件中添加如下依赖：
+`implementation 'bas.droid:XPopup:2.9.18'`
+
 ## XPopup
 ![](https://api.bintray.com/packages/li-xiaojun/jrepo/xpopup/images/download.svg)  ![](https://img.shields.io/badge/platform-android-blue.svg)  ![](https://img.shields.io/badge/author-li--xiaojun-brightgreen.svg) ![](https://img.shields.io/badge/compileSdkVersion-28-blue.svg) ![](https://img.shields.io/badge/minSdkVersion-19-blue.svg) ![](https://img.shields.io/hexpm/l/plug.svg)
 ![](screenshot/logo.png)
